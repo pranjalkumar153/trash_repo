@@ -8,7 +8,8 @@ var num = document.getElementById("val").defaultValue;
 var win_sc = document.getElementById("win");
 win_sc.textContent = 5;
 console.log(document.getElementById("val").value);
-
+// Inititially, I thought that there are some bugs.
+// But now it's working absolutely fine.
 res.addEventListener("click", function() {
     num = parseInt(document.getElementById("val").value);
     win_sc.textContent = num;
