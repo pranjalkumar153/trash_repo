@@ -1,0 +1,42 @@
+/* My cheatsheet for making my HTML page resposive using Bootstrap! */
+
+
+/*1. Adding bootstrap to an HTML file:
+Place the following in the head section of HTML file.
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" 
+integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" 
+integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" 
+integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+*/
+
+
+/* 2.
+The class Jumbotron:
+Its a light weight, flexible component that can extend the entire viewport to show the keycontent of the webpage.
+To make Jumbotron full width without rounded corners place it outside the class container.
+The container tag places the content at the center of the screen.
+*/
+
+
+/*3.
+Working with the navigation bars:
+https://getbootstrap.com/docs/3.4/components/#navbar
+navbar-left class could be used for placing the contents of navigation bar on left
+and navbar-right class could be used for placing thte contents fo navigation bar on right.
+collapse class for getting a hamburger-like icon when screen is collapsed.
+*/
+
+
+/*4.
+https://getbootstrap.com/docs/4.1/layout/grid/
+The grid system.
+*/
