@@ -7,7 +7,9 @@
     margin: 1.66%;
     height: 25%;
     float: left;
-    background-color: aqua;
+    padding-bottom: 30%;
+    /*background-color: aqua;*/
+    border-radius: 10px;
 }
 
 #container {

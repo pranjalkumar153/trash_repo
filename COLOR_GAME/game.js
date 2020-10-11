@@ -55,3 +55,25 @@ console.log(col_arr);
 
 
 // adding the options
+
+var sq = document.getElementsByClassName("square");
+console.log(sq);
+
+function color(arr) {
+    var col = "rgb(" + arr[0] + ", " + arr[1] + ", " + arr[2] + ")";
+    return col;
+}
+
+
+for (var i = 0; i < 6; i++) {
+    sq[i].style.backgroundColor = color(col_arr[i]);
+    console.log(color(col_arr[i]));
+}
+
+for (var i = 0; i < 6; i++) {
+    sq[i].addEventListener("click", function() {
+        if (color(col_arr[i]) != color(col)) {
+            sq[i].classList.add("disappear");
+        }
+    })
+}
