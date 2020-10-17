@@ -20,7 +20,9 @@ app.get("/repeat/:st/:num",function(req,res){
     res.send(p);
 });
 
-
+app.get("*", fucntion(req,res){
+    res.send("You entered a wrong URL!! What are you doing in your life??");
+});
 
 
 app.listen(8000, 8000, function(){
