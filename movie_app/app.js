@@ -87,7 +87,7 @@ app.post("/search_results", function(req, res) {
     var result_page = function() {
         res.redirect("/results/keyword");
     }
-    setTimeout(result_page, 5000);
+    setTimeout(result_page, 3000);
     // res.redirect("/results/keyword");
 });
 
