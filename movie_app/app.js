@@ -23,6 +23,18 @@ var request = require("request");
 // the extension each and every time.
 app.set("view engine", "ejs");
 
+
+app.get("/history_clean", function(req, res) {
+    hist.deleteMany({}, function(err, del) {
+        if (err) {
+            console.log("AN ERROR INCURRED WHILE DELETING THE DATA");
+        } else {
+            console.log("DATA DELETED SUCCESSFULLY!!");
+        }
+    });
+    res.redirect("/history");
+});
+
 // app.get("/", function(req, res) {
 //     res.send("SERVER IS WORKING AS EXPECTED!!");
 // });
