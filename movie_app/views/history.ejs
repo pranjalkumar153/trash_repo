@@ -11,24 +11,19 @@
 <body>
     <div class="container">
         <div class="jumbotron">
-            <div class="jumbotron">
-                <h1>SEARCH FOR ANY MOVIE!!</h1>
-            </div>
-            <div class="jumbotron">
-                <div class="form-group">
-                    <form action="/search_results" method="POST">
-                        <input type="text" name="movie_name" placeholder="Your Keywords!!" class="form-control"><br>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                    <br>
-                    <a href="/history"><button class="btn btn-success">Your Search History</button></a>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <em style="color:grey">Powered by OMBD API</em>
+            <ul>
+                <h1>Your search history is as follows: </h1>
+                <% if(h.length==0){ %>
+                    <p>Your search history is empty!!</p>
+                    <% }else {%>
+                        <% for(var i=0;i<h.length;i++){ %>
+                            <li>
+                                <%=h[i].key%>
+                            </li>
+                            <% }%>
+                                <% } %>
+            </ul>
+            <a href="/history_clean"><button class="btn btn-danger">Clear search history</button></a>
         </div>
     </div>
 </body>
-
-</html>

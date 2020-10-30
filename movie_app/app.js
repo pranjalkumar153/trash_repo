@@ -7,6 +7,16 @@ var bodyparser = require("body-parser");
 
 app.use(bodyparser.urlencoded({ extended: true }));
 
+// Adding database to our application
+var mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost/hist");
+// Schema for storing the history
+var History = mongoose.Schema({
+    key: String
+});
+
+var hist = mongoose.model("history", History);
+
 var request = require("request");
 
 // setting this view engine so that the coder need not provide
@@ -16,7 +26,19 @@ app.set("view engine", "ejs");
 // app.get("/", function(req, res) {
 //     res.send("SERVER IS WORKING AS EXPECTED!!");
 // });
-
+app.get("/history", function(req, res) {
+    var x = "";
+    hist.find({}, function(err, h) {
+        if (err) {
+            console.log("An error incurred!!");
+        } else {
+            x = h;
+            console.log("Information retrieved succesfully!!");
+            console.log(x);
+            res.render("history", { h: x });
+        }
+    });
+});
 
 // 1. Home page setup successfully done.
 
@@ -41,6 +63,17 @@ app.post("/search_results", function(req, res) {
     console.log(keyword);
     var url = "http://www.omdbapi.com/?apikey=90331194&s=";
     url += keyword;
+    var h = new hist({
+        key: keyword
+    });
+    h.save(function(err, hist) {
+        if (err) {
+            console.log("Incurred an error while saving the new search keyword")
+        } else {
+            console.log("SAVED SUCCESSFULLY!!");
+            console.log(hist);
+        }
+    });
     request(url, function(err, response, body) {
         if (!err && response.statusCode == 200) {
             result = JSON.parse(body);
