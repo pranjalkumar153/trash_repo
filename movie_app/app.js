@@ -109,8 +109,8 @@ app.get("/results/keyword", function(req, res) {
 
 
 
-app.listen(8000, 8000, function() {
+app.listen(process.env.POST, process.env.IP, function() {
     console.log("CONNECTED SUCCESSFULLY TO THE SERVER!!");
-    console.log("THE ROUTES ARE HOSTED VIA: ");
-    console.log("localhost:8000");
+    // console.log("THE ROUTES ARE HOSTED VIA: ");
+    // console.log("localhost:8000");
 });
