@@ -15,28 +15,32 @@
         </div>
         <div class="jumbotron">
             <ul>
-                <% for(var i=0;i<results.length;i++){ %>
-                    <li>
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row no-gutters">
-                                <div class="col-md-4">
-                                    <img src="<%=results[i].Poster%>" class="card-img" alt="Preview not available">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">
-                                            <%=results[i].Title %>
-                                        </h5>
-                                        <p class="card-text">
-                                            <%=results[i].Year %>
-                                        </p>
-                                        <p class="card-text"><small class="text-muted"><%=results[i].imbdID %></small></p>
+                <% if(typeof results =='undefined'|| results.length==0){ %>
+                    <p>No results to display!!</p>
+                    <% }else{ %>
+                        <% for(var i=0;i<results.length;i++){ %>
+                            <li>
+                                <div class="card mb-3" style="max-width: 540px;">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4">
+                                            <img src="<%=results[i].Poster%>" class="card-img" alt="Preview not available">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">
+                                                    <%=results[i].Title %>
+                                                </h5>
+                                                <p class="card-text">
+                                                    <%=results[i].Year %>
+                                                </p>
+                                                <p class="card-text"><small class="text-muted"><%=results[i].imbdID %></small></p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </li>
-                    <%};%>
+                            </li>
+                            <%};%>
+                                <% } %>
             </ul>
         </div>
     </div>
