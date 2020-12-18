@@ -13,6 +13,9 @@
             $pizza = $pizzas[$i];
             print $pizza["pizza_name"]." ".$pizza["ingredients"].PHP_EOL;
         }
+        // freeing the data after rendering it
+        mysqli_free_result($result);
+        mysqli_close($conn);
     }
 
 
